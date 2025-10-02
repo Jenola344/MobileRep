@@ -1,0 +1,163 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Represents a user's public profile.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The user's full name."
+        },
+        "avatarUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the user's profile picture."
+        },
+        "repScore": {
+          "type": "number",
+          "description": "The user's calculated reputation score."
+        },
+        "region": {
+          "type": "string",
+          "description": "The user's geographical region in Africa."
+        }
+      },
+      "required": ["name", "repScore", "region"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Represents a financial transaction.",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Completed", "Pending", "Failed"]
+        }
+      },
+      "required": ["date", "description", "amount", "currency", "status"]
+    },
+    "Opportunity": {
+      "title": "Opportunity",
+      "description": "Represents a job or service opportunity.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "repScoreRequired": {
+          "type": "number"
+        },
+        "earnings": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": ["title", "company", "location", "repScoreRequired"]
+    },
+    "SavingsCircle": {
+      "title": "Savings Circle",
+      "description": "Represents a savings group or circle.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "members": {
+          "type": "number"
+        },
+        "totalPot": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "repScoreMin": {
+          "type": "number"
+        }
+      },
+      "required": ["name", "members", "totalPot", "currency", "repScoreMin"]
+    },
+    "Vouch": {
+      "title": "Vouch",
+      "description": "Represents a vouch from one user to another.",
+      "type": "object",
+      "properties": {
+        "fromUserId": {
+          "type": "string"
+        },
+        "toUserId": {
+          "type": "string"
+        },
+        "skill": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["fromUserId", "toUserId", "skill", "rating"]
+    }
+  },
+  "auth": {
+    "providers": []
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Stores public user profiles."
+    },
+    "/users/{userId}/transactions/{transactionId}": {
+      "schema": {
+        "$ref": "#/entities/Transaction"
+      },
+      "description": "Sub-collection for a user's transactions."
+    },
+    "/opportunities/{opportunityId}": {
+      "schema": {
+        "$ref": "#/entities/Opportunity"
+      },
+      "description": "Collection of all available opportunities."
+    },
+    "/circles/{circleId}": {
+      "schema": {
+        "$ref": "#/entities/SavingsCircle"
+      },
+      "description": "Collection of all savings circles."
+    },
+    "/vouches/{vouchId}": {
+      "schema": {
+        "$ref": "#/entities/Vouch"
+      },
+      "description": "Collection of all vouches made in the system."
+    }
+  }
+}
