@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "user-1",
+      "description": "Portrait of a smiling African woman",
+      "imageUrl": "https://images.unsplash.com/photo-1529245019870-59b249281fd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YWZyaWNhbiUyMHdvbWFufGVufDB8fHx8MTc1OTQxMjAxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african woman"
+    },
+    {
+      "id": "user-2",
+      "description": "Portrait of an African man in a suit",
+      "imageUrl": "https://images.unsplash.com/photo-1440451185281-11ff5853ce0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhZnJpY2FuJTIwbWFufGVufDB8fHx8MTc1OTQxMjAwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "african man"
+    },
+    {
+      "id": "user-3",
+      "description": "Portrait of a young African entrepreneur",
+      "imageUrl": "https://images.unsplash.com/photo-1543132220-e7fef0b974e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b3VuZyUyMGVudHJlcHJlbmV1cnxlbnwwfHx8fDE3NTk0MTIwMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "young entrepreneur"
+    },
+    {
+      "id": "user-4",
+      "description": "Portrait of an African creative professional",
+      "imageUrl": "https://images.unsplash.com/photo-1527362127499-f590dfc9af95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NTkzMzAwMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "creative professional"
+    },
+    {
+      "id": "user-5",
+      "description": "Portrait of an elder African man",
+      "imageUrl": "https://images.unsplash.com/photo-1741955042359-979ff1a903b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGRlciUyMG1hbnxlbnwwfHx8fDE3NTk0MTIwMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "elder man"
+    },
+    {
+      "id": "opportunity-1",
+      "description": "Modern office space",
+      "imageUrl": "https://images.unsplash.com/photo-1497366412874-3415097a27e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjBzcGFjZXxlbnwwfHx8fDE3NTkzNTIzMzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office space"
+    },
+    {
+      "id": "opportunity-2",
+      "description": "Collaboration meeting",
+      "imageUrl": "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3NTkzNTg5Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "opportunity-3",
+      "description": "Person coding on a laptop",
+      "imageUrl": "https://images.unsplash.com/photo-1508674861872-a51e06c50c9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBjb2Rpbmd8ZW58MHx8fHwxNzU5MzkyNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person coding"
+    }
+  ]
 }
