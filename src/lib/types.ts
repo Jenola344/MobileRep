@@ -54,8 +54,10 @@ export type Transaction = {
   id: string;
   date: string;
   description: string;
-  amount: number;
-  currency: string;
+  amount?: number;
+  currency?: string;
+  cryptoAmount?: number;
+  cryptoCurrency?: string;
   status: 'Completed' | 'Pending' | 'Failed';
 };
 

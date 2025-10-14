@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import { ArrowDownLeft, ArrowUpRight, Banknote } from 'lucide-react';
+import { ArrowDownLeft, ArrowUpRight, Banknote, Bitcoin } from 'lucide-react';
 import { mockTransactions } from '@/lib/data';
 import { useRegion } from '@/contexts/region-context';
 import { cn } from '@/lib/utils';
@@ -17,9 +17,13 @@ export function FinancialHubView() {
         { currency: 'ZAR', amount: 8000, symbol: 'R' },
     ];
 
+    const cryptoBalances = [
+        { currency: 'cUSD', amount: 550.75, symbol: '' }
+    ]
+
     return (
         <div className="space-y-6">
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {balances.map(balance => (
                      <Card key={balance.currency}>
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -31,7 +35,23 @@ export function FinancialHubView() {
                                 {balance.symbol}{balance.amount.toLocaleString()}
                             </div>
                             <p className="text-xs text-muted-foreground">
-                                Equivalent to {region.currency.symbol}{(balance.amount / 5).toLocaleString()}
+                                Fiat Balance
+                            </p>
+                        </CardContent>
+                    </Card>
+                ))}
+                 {cryptoBalances.map(balance => (
+                     <Card key={balance.currency}>
+                        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                            <CardTitle className="text-sm font-medium">{balance.currency} Balance</CardTitle>
+                            <Bitcoin className="h-4 w-4 text-muted-foreground" />
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-2xl font-bold font-headline">
+                                {balance.amount.toLocaleString()}
+                            </div>
+                             <p className="text-xs text-muted-foreground">
+                                Crypto Balance
                             </p>
                         </CardContent>
                     </Card>
@@ -70,9 +90,12 @@ export function FinancialHubView() {
                                 <TableRow key={tx.id}>
                                     <TableCell className="font-medium">{tx.date}</TableCell>
                                     <TableCell>{tx.description}</TableCell>
-                                    <TableCell className={cn("text-right font-semibold", tx.amount > 0 ? "text-green-600" : "text-red-600")}>
-                                        {tx.amount > 0 ? '+' : ''}
-                                        {new Intl.NumberFormat('en-US', { style: 'currency', currency: tx.currency }).format(tx.amount)}
+                                    <TableCell className={cn("text-right font-semibold", (tx.amount ?? tx.cryptoAmount ?? 0) > 0 ? "text-green-600" : "text-red-600")}>
+                                        {(tx.amount ?? tx.cryptoAmount ?? 0) > 0 ? '+' : ''}
+                                        {tx.cryptoCurrency ? 
+                                          `${tx.cryptoAmount} ${tx.cryptoCurrency}` :
+                                          new Intl.NumberFormat('en-US', { style: 'currency', currency: tx.currency || 'USD' }).format(tx.amount || 0)
+                                        }
                                     </TableCell>
                                     <TableCell>
                                         <Badge variant={

@@ -35,7 +35,8 @@ export const mockTransactions: Transaction[] = [
   { id: '1', date: '2024-07-20', description: 'Payment from Jomo K.', amount: 5000, currency: 'KES', status: 'Completed' },
   { id: '2', date: '2024-07-19', description: 'Ajo contribution', amount: -10000, currency: 'NGN', status: 'Completed' },
   { id: '3', date: '2024-07-18', description: 'Request to Fatima A.', amount: 2500, currency: 'EGP', status: 'Pending' },
-  { id: '4', date: '2024-07-17', description: 'Mobile Money Top-up', amount: 150000, currency: 'ZAR', status: 'Completed' },
+  { id: '4', date: '2024-07-17', description: 'Gig payment - Design work', cryptoAmount: 150, cryptoCurrency: 'cUSD', status: 'Completed' },
+  { id: '5', date: '2024-07-16', description: 'Mobile Money Top-up', amount: 150000, currency: 'ZAR', status: 'Completed' },
 ];
 
 export const mockSavingsCircles: SavingsCircle[] = [

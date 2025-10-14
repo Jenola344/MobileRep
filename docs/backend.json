@@ -28,7 +28,7 @@
     },
     "Transaction": {
       "title": "Transaction",
-      "description": "Represents a financial transaction.",
+      "description": "Represents a financial transaction, which can be in fiat or cryptocurrency.",
       "type": "object",
       "properties": {
         "date": {
@@ -39,17 +39,27 @@
           "type": "string"
         },
         "amount": {
-          "type": "number"
+          "type": "number",
+          "description": "The transaction amount in fiat currency."
         },
         "currency": {
-          "type": "string"
+          "type": "string",
+          "description": "The fiat currency code (e.g., NGN, KES)."
         },
         "status": {
           "type": "string",
           "enum": ["Completed", "Pending", "Failed"]
+        },
+        "cryptoAmount": {
+          "type": "number",
+          "description": "The transaction amount in cryptocurrency."
+        },
+        "cryptoCurrency": {
+          "type": "string",
+          "description": "The cryptocurrency symbol (e.g., cUSD, BTC)."
         }
       },
-      "required": ["date", "description", "amount", "currency", "status"]
+      "required": ["date", "description", "status"]
     },
     "Opportunity": {
       "title": "Opportunity",
