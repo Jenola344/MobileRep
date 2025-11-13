@@ -54,8 +54,8 @@ export function DashboardView() {
                 </CardHeader>
                 <CardContent>
                     <div className="space-y-4">
-                        {mockActivities.map(activity => (
-                             <div key={activity.id} className="flex items-center gap-4">
+                        {mockActivities.map((activity, index) => (
+                             <div key={activity.id} className="flex items-center gap-4 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms`}}>
                                 <Avatar>
                                     <AvatarImage src={activity.user.avatarUrl} alt={activity.user.name} />
                                     <AvatarFallback>{activity.user.name.charAt(0)}</AvatarFallback>
