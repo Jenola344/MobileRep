@@ -41,7 +41,7 @@ export function MarketplaceView() {
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {mockOpportunities.map(opp => (
-                    <Card key={opp.id} className="flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl bg-card/50">
+                    <Card key={opp.id} className="flex flex-col transition-all duration-300 hover:scale-[1.03] hover:shadow-xl bg-card/50">
                         <CardHeader className="p-0">
                             <div className="relative h-48 w-full">
                                 <Image
