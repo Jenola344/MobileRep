@@ -25,7 +25,7 @@ export function FinancialHubView() {
         <div className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {balances.map(balance => (
-                     <Card key={balance.currency}>
+                     <Card key={balance.currency} className="bg-card/50">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                             <CardTitle className="text-sm font-medium">{balance.currency} Balance</CardTitle>
                             <Banknote className="h-4 w-4 text-muted-foreground" />
@@ -41,7 +41,7 @@ export function FinancialHubView() {
                     </Card>
                 ))}
                  {cryptoBalances.map(balance => (
-                     <Card key={balance.currency}>
+                     <Card key={balance.currency} className="bg-card/50">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                             <CardTitle className="text-sm font-medium">{balance.currency} Balance</CardTitle>
                             <Bitcoin className="h-4 w-4 text-muted-foreground" />
@@ -90,7 +90,7 @@ export function FinancialHubView() {
                                 <TableRow key={tx.id}>
                                     <TableCell className="font-medium">{tx.date}</TableCell>
                                     <TableCell>{tx.description}</TableCell>
-                                    <TableCell className={cn("text-right font-semibold", (tx.amount ?? tx.cryptoAmount ?? 0) > 0 ? "text-green-600" : "text-red-600")}>
+                                    <TableCell className={cn("text-right font-semibold", (tx.amount ?? tx.cryptoAmount ?? 0) > 0 ? "text-emerald-400" : "text-rose-400")}>
                                         {(tx.amount ?? tx.cryptoAmount ?? 0) > 0 ? '+' : ''}
                                         {tx.cryptoCurrency ? 
                                           `${tx.cryptoAmount} ${tx.cryptoCurrency}` :

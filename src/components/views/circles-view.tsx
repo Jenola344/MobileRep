@@ -22,7 +22,7 @@ export function CirclesView() {
                 </CardHeader>
                 <CardContent className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {mockSavingsCircles.map(circle => (
-                        <Card key={circle.id} className="transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                        <Card key={circle.id} className="transition-all duration-300 hover:scale-105 hover:shadow-xl bg-card/50">
                             <CardHeader>
                                 <CardTitle className="font-headline">{circle.name}</CardTitle>
                                 <Badge variant="outline" className="w-fit">
@@ -66,7 +66,7 @@ export function CirclesView() {
                     </div>
                 </CardContent>
                 <CardFooter className="flex gap-4">
-                    <Button className="w-full bg-green-600 hover:bg-green-700">Vote For</Button>
+                    <Button className="w-full" variant="secondary">Vote For</Button>
                     <Button variant="destructive" className="w-full">Vote Against</Button>
                 </CardFooter>
             </Card>
