@@ -560,6 +560,39 @@ export default function RootLayout({
               <a className="nav-cta" href="#cta">Get the app</a>
             </div>
           </header>
+          
+  <main>
+ 
+    /*-- HERO --*/
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <div class="eyebrow">Built for Nigeria's informal workforce</div>
+          <h1>Your reputation shouldn't <em>reset</em> every time you start a new job.</h1>
+          <p class="lede">MobileRep is a job marketplace and Ajo savings platform where trust is earned through real vouches — not a resume — and carried with you from gig to gig, group to group.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#trust">See how vouching works</a>
+            <a class="btn btn-ghost" href="#ajo">Explore Ajo groups</a>
+          </div>
+        </div>
+        <div class="ring-stage" aria-hidden="true">
+          <div class="ring-orbit"></div>
+          <div class="ring-center">
+            <span class="num">₦</span>
+            <span class="lbl">This cycle's pot</span>
+          </div>
+          <!-- 8 nodes positioned around the circle, animation-delay staggers the "pot" -->
+          <div class="node" style="left:132px; top:7px; animation-delay:0s;">MK</div>
+          <div class="node" style="left:199.2px; top:34.8px; animation-delay:-1s;">AD</div>
+          <div class="node" style="left:227px; top:102px; animation-delay:-2s;">CF</div>
+          <div class="node" style="left:199.2px; top:169.2px; animation-delay:-3s;">TU</div>
+          <div class="node" style="left:132px; top:197px; animation-delay:-4s;">SB</div>
+          <div class="node" style="left:64.8px; top:169.2px; animation-delay:-5s;">NN</div>
+          <div class="node" style="left:37px; top:102px; animation-delay:-6s;">RE</div>
+          <div class="node" style="left:64.8px; top:34.8px; animation-delay:-7s;">JI</div>
+        </div>
+      </div>
+    </section>
           <RegionProvider>
             {children}
             <Toaster />
