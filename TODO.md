@@ -14,9 +14,11 @@
 - [ ] Add React Query hooks for queries/mutations
 
 ## Phase 2: Wire UI mutations (Vouch + Marketplace first)
+- [ ] Create local data/service layer hooks (React Query) for vouches + opportunities
 - [ ] Update `VouchView` to submit vouch and show success/error/toast
 - [ ] Update `MarketplaceView` to support application flow + stateful CTA
 - [ ] Add empty/loading states to both views
+
 
 ## Phase 3: Product/UX polish
 - [ ] Add gated actions based on phone verification readiness
