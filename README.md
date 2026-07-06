@@ -111,7 +111,7 @@ Group participation
 
 ---
 
-## Technical Architecture
+## Technical Architecture (Stellar-grade, Blockchain-ready)
 ### Frontend
 - Next.js (App Router), React
 - Tailwind UI components (Radix)
@@ -121,10 +121,25 @@ Group participation
 
 ### Backend (Planned / Intended)
 - Firebase Authentication
-- Firestore for data storage
+- Firestore for primary product data
 - Cloud Functions for payment processing / integrations
 - Cloud Storage for profile media
 - Firebase Cloud Messaging for notifications
+
+### Stellar / Blockchain Layer (Optional, Roadmap)
+The product is designed so that **attestations** can be anchored to a verifiable ledger:
+- vouch submissions → immutable credential receipt
+- job completion attestations → job fact anchor
+- circle contribution milestones → contribution receipts
+- dispute outcomes → auditable resolution record
+
+Implementation strategy:
+- write product facts to Firestore
+- generate an attestation payload (hash/metadata)
+- submit to a ledger (e.g., Stellar or compatible network)
+- store transaction/attestation IDs back in Firestore
+
+This keeps the system fast and user-friendly while enabling long-term integrity.
 
 ### Payment Integration (Planned)
 - Paystack and/or mobile money integrations
@@ -137,6 +152,7 @@ Group participation
 - SMS notifications via Twilio
 - Email notifications
 - Push notifications
+
 
 ---
 
