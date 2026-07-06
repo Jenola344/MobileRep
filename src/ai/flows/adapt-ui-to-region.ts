@@ -7,10 +7,14 @@
  * - AdaptUiToRegionOutput - The return type for the adaptUiToRegion function.
  */
 
-import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
+// NOTE: This flow depends on Genkit prompts.
+// In this demo environment we keep it SSR-safe by exporting a placeholder implementation.
+// Client-side streaming can be re-enabled by wiring to a non-null Genkit instance.
+
 const AdaptUiToRegionInputSchema = z.object({
+
   region: z
     .string()
     .describe("The user's region (e.g., West Africa, East Africa, Southern Africa, North Africa, Central Africa)."),

@@ -1,7 +1,4 @@
-import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/google-genai';
+// SSR-safe stub to avoid crashing Next server in this demo environment.
+// The browser/client side can use `src/ai/genkit-browser.ts`.
+export const ai = null as any;
 
-export const ai = genkit({
-  plugins: [googleAI()],
-  model: 'googleai/gemini-2.5-flash',
-});

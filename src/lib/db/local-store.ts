@@ -4,6 +4,11 @@ export type StoredRecord<T> = {
 };
 
 const hasWindow = typeof window !== 'undefined';
+const hasLocalStorage =
+  hasWindow &&
+  typeof window.localStorage !== 'undefined' &&
+  typeof window.localStorage.getItem === 'function';
+
 
 export function createLocalStorageStore<T extends { id: string }>(opts: {
   key: string;
@@ -12,7 +17,8 @@ export function createLocalStorageStore<T extends { id: string }>(opts: {
   const { key, seed = [] } = opts;
 
   const read = (): T[] => {
-    if (!hasWindow) return seed;
+    if (!hasLocalStorage) return seed;
+
     try {
       const raw = window.localStorage.getItem(key);
       if (!raw) return seed;
@@ -24,7 +30,8 @@ export function createLocalStorageStore<T extends { id: string }>(opts: {
   };
 
   const write = (items: T[]) => {
-    if (!hasWindow) return;
+    if (!hasLocalStorage) return;
+
     window.localStorage.setItem(key, JSON.stringify(items));
   };
 
