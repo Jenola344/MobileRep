@@ -4,6 +4,8 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { RegionProvider } from '@/contexts/region-context';
+import { Providers } from './providers';
+
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
