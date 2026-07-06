@@ -547,24 +547,24 @@ export default function RootLayout({
 ` }} />
       </head>
       <body className={cn('font-body antialiased', inter.variable)}>
-        <div class="grain-bg"></div>
-<div class="page">
- 
-  <header class="nav">
-    <div class="wrap">
-      <div class="logo">Mobile<span>Rep</span></div>
-      <nav class="nav-links">
-        <a href="#trust">Trust model</a>
-        <a href="#ajo">Ajo groups</a>
-        <a href="#howto">How to use</a>
-      </nav>
-      <a class="nav-cta" href="#cta">Get the app</a>
-    </div>
-  </header>
-        <RegionProvider>
-          {children}
-          <Toaster />
-        </RegionProvider>
+        <div className="grain-bg"></div>
+        <div className="page">
+          <header className="nav">
+            <div className="wrap">
+              <div className="logo">Mobile<span>Rep</span></div>
+              <nav className="nav-links">
+                <a href="#trust">Trust model</a>
+                <a href="#ajo">Ajo groups</a>
+                <a href="#howto">How to use</a>
+              </nav>
+              <a className="nav-cta" href="#cta">Get the app</a>
+            </div>
+          </header>
+          <RegionProvider>
+            {children}
+            <Toaster />
+          </RegionProvider>
+        </div>
       </body>
     </html>
   );
