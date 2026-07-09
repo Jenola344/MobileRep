@@ -25,7 +25,7 @@ export function RegionProvider({ children }: { children: ReactNode }) {
     root.style.setProperty('--chart-1', currentRegion.colors.primary);
     root.style.setProperty('--chart-2', currentRegion.colors.accent);
 
-    const darkRoot = document.querySelector('.dark');
+    const darkRoot = document.querySelector('.dark') as HTMLElement | null;
     if (darkRoot) {
       // You might want to define dark mode variations of your regional colors
       // For now, we'll just use the same ones but you could adjust lightness
@@ -35,6 +35,7 @@ export function RegionProvider({ children }: { children: ReactNode }) {
       darkRoot.style.setProperty('--chart-1', currentRegion.colors.primary);
       darkRoot.style.setProperty('--chart-2', currentRegion.colors.accent);
     }
+
 
 
   }, [currentRegion]);

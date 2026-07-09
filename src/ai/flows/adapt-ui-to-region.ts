@@ -35,23 +35,26 @@ export async function adaptUiToRegion(input: AdaptUiToRegionInput): Promise<Adap
   return adaptUiToRegionFlow(input);
 }
 
+import { ai } from '@/ai/genkit';
+
 const prompt = ai.definePrompt({
   name: 'adaptUiToRegionPrompt',
-  input: {schema: AdaptUiToRegionInputSchema},
-  output: {schema: AdaptUiToRegionOutputSchema},
+  input: { schema: AdaptUiToRegionInputSchema },
+  output: { schema: AdaptUiToRegionOutputSchema },
   prompt: `You are an AI assistant specializing in adapting user interfaces to different regions within Africa.
 
-  Given the user's region and the current UI elements, your task is to modify the UI elements to better suit the regional preferences.
-  Consider the following aspects:
-  - Language: Use the appropriate language or dialect for the region.
-  - Currency: Display prices in the local currency.
-  - Cultural Elements: Incorporate regional cultural symbols, patterns, and design aesthetics.
-  - Payment Methods: Prioritize payment methods that are commonly used in the region (e.g., M-Pesa in East Africa).
+Given the user's region and the current UI elements, modify the UI elements to better suit regional preferences.
 
-  Region: {{{region}}}
-  Current UI Elements: {{{currentUiElements}}}
+Consider the following aspects:
+- Language: Use the appropriate language or dialect for the region.
+- Currency: Display prices in the local currency.
+- Cultural Elements: Incorporate regional cultural symbols, patterns, and design aesthetics.
+- Payment Methods: Prioritize payment methods commonly used in the region (e.g., M-Pesa in East Africa).
 
-  Adapted UI Elements (JSON format):`,
+Region: {{{region}}}
+Current UI Elements: {{{currentUiElements}}}
+
+Adapted UI Elements (JSON format):`,
   config: {
     safetySettings: [
       {
@@ -76,8 +79,9 @@ const adaptUiToRegionFlow = ai.defineFlow(
     inputSchema: AdaptUiToRegionInputSchema,
     outputSchema: AdaptUiToRegionOutputSchema,
   },
-  async input => {
-    const {output} = await prompt(input);
+  async (input: AdaptUiToRegionInput) => {
+    const { output } = await prompt(input);
     return output!;
   }
 );
+

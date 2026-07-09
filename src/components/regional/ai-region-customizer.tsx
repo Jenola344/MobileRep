@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { streamFlow } from '@genkit-ai/next/client';
 import { adaptUiToRegion } from '@/ai/flows/adapt-ui-to-region';
+
 
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -32,23 +32,20 @@ export function AiRegionCustomizer() {
     setError(null);
 
     try {
-      const { stream, response } = streamFlow(adaptUiToRegion, {
+      const result = await adaptUiToRegion({
         region: region.name,
         currentUiElements: uiElements,
       });
-
-      for await (const chunk of stream()) {
-        if (chunk?.adaptedUiElements) {
-          setAdaptedContent(chunk.adaptedUiElements);
-        }
-      }
-
-      await response();
+      setAdaptedContent(result.adaptedUiElements);
     } catch (e: any) {
       setError(e);
     } finally {
       setLoading(false);
     }
+
+
+
+
   };
 
   return (
