@@ -551,25 +551,27 @@ export default function RootLayout({
         <div className="page">
           <header className="nav">
             <div className="wrap">
-              <div className="logo">Mobile<span>Rep</span></div>
+              <div className="logo">
+                Mobile<span>Rep</span>
+              </div>
               <nav className="nav-links">
                 <a href="#trust">Trust model</a>
                 <a href="#ajo">Ajo groups</a>
                 <a href="#howto">How to use</a>
               </nav>
-              <a className="nav-cta" href="#cta">Get the app</a>
+              <a className="nav-cta" href="#cta">
+                Get the app
+              </a>
             </div>
           </header>
-          
-          
-        <main className="page">
-          {/* NOTE: The previous version of this file had raw HTML inside a JSX <main>, which broke the build.
-              This layout currently only provides the base theming + RegionProvider.
-              Product landing sections can be reintroduced safely in a dedicated page/component. */}
-          {children}
-        </main>
+
+          <main className="page">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );
 }
+
 
