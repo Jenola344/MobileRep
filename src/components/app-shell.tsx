@@ -122,6 +122,7 @@ export function AppShell() {
             {content[activeTab]}
         </main>
       </SidebarInset>
+      </SidebarInset>
     </SidebarProvider>
   );
 }

@@ -26,7 +26,7 @@ export default function RootLayout({
         <title>MobileRep — Reputation that travels with you</title>
       </head>
       <body className={cn('font-body antialiased', inter.variable)}>
-        <div className="grain-bg"></div>
+        <div className="grain-bg" aria-hidden="true" />
         <main className="page">
           <RegionProvider>
             {children}
