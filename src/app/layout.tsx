@@ -566,7 +566,9 @@ export default function RootLayout({
           </header>
 
           <main className="page">
-            {children}
+            <RegionProvider>
+              {children}
+            </RegionProvider>
           </main>
         </div>
       </body>
