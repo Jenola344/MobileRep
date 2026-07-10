@@ -1,36 +1,10 @@
-# MobileRep — Stellar Product Transformation TODO
+# Frontend navigation + design redesign
 
-## Phase 0: Setup & verification
-- [ ] Ensure dev server builds/runs locally
-- [ ] Confirm TypeScript + lint pass (`npm run typecheck`, `npm run lint`)
-
-## Phase 1: Data/service layer (mock-to-real adapter boundary)
-- [ ] Add `src/lib/services` (or `src/lib/api`) with typed interfaces matching `src/lib/types.ts`
-- [ ] Implement a local/in-memory + `localStorage` adapter for:
-  - [ ] Vouches (create/list)
-  - [ ] Opportunities (list/detail)
-  - [ ] Applications (create)
-  - [ ] Circle votes (later)
-- [ ] Add React Query hooks for queries/mutations
-
-## Phase 2: Wire UI mutations (Vouch + Marketplace first)
-- [ ] Create local data/service layer hooks (React Query) for vouches + opportunities (blockchain-ready by design)
-- [ ] Update `VouchView` to submit vouch and show success/error/toast
-- [ ] Update `MarketplaceView` to support application flow + stateful CTA
-- [ ] Add empty/loading states to both views
-
-
-## Phase 3: Product/UX polish
-- [ ] Add gated actions based on phone verification readiness
-- [ ] Add vouch/app evidence checklist UX improvements
-- [ ] Add opportunity detail view (modal or route)
-
-## Phase 4: AI integration (safe assist)
-- [ ] Wire AI-assisted message composer for vouch/application
-- [ ] Wire region customizer “apply changes” to constrained labels
-
-## Phase 5: Quality (performance + accessibility)
-- [ ] Skeletons to reduce layout shift
-- [ ] Accessibility pass for forms and dialogs
-- [ ] Mobile breakpoint UX verification
+## Planned steps
+- [ ] Remove marketing navbar/CSS injection from `src/app/layout.tsx` and keep root-level concerns only
+- [ ] Move theme tokens (gold/coral/bg/ink/hairline) from `layout.tsx` into `src/app/globals.css`
+- [ ] Refactor `src/components/app-shell.tsx` + `src/components/header.tsx` to a unified, more pro-tech navigation (better spacing, active state, polished header)
+- [ ] Add a shared page header component (title/description + optional chips) and apply across all views
+- [ ] Standardize card “glass panel” styling usage in views for consistent look
+- [ ] Run `npm run lint` and `npm run build` to verify
 
