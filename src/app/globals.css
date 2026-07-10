@@ -48,6 +48,20 @@
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 262 88% 66%;
+
+    /* AfriRep brand tokens (previously in layout.tsx) */
+    --bg: #0b1526;
+    --bg-panel: #101e36;
+    --bg-panel-2: #0e1a30;
+    --ink: #f4efe3;
+    --ink-muted: #9faac2;
+    --ink-faint: #6c7893;
+    --gold: #d8a63f;
+    --gold-soft: rgba(216, 166, 63, 0.16);
+    --coral: #e8663f;
+    --coral-soft: rgba(232, 102, 63, 0.16);
+    --hairline: rgba(244, 239, 227, 0.12);
+    --hairline-strong: rgba(244, 239, 227, 0.22);
   }
 
   .dark {
@@ -82,20 +96,6 @@
     --chart-1: 262 88% 66%;
     --chart-2: 300 81% 60%;
     --chart-3: 197 37% 34%;
-    --chart-4: 43 74% 76%;
-    --chart-5: 27 87% 77%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 240 5.9% 10%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 262 88% 66%;
-  }
-}
-
 @layer base {
   * {
     @apply border-border;
