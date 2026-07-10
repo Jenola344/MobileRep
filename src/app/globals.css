@@ -128,3 +128,12 @@
   z-index: 0;
   pointer-events: none;
   opacity: 0.5;
+  background-image: radial-gradient(circle at 1px 1px, rgba(244, 239, 227, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+}
+
